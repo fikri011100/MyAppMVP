@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
   public void onSucces(List<ResultsBean> data) {
     this.data.addAll(data);
     adapter.notifyDataSetChanged();
-    Log.i("response", data.toString());
   }
 
   @Override
