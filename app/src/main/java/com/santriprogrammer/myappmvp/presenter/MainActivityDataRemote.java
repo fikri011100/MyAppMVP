@@ -2,6 +2,7 @@ package com.santriprogrammer.myappmvp.presenter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import com.android.volley.Request;
 import com.android.volley.Request.Method;
 import com.android.volley.RequestQueue;
@@ -35,6 +36,7 @@ public class MainActivityDataRemote implements MainActivityDataResource {
           @Override
           public void onResponse(String response) {
             final PojoMain pojoMain = new Gson().fromJson(response, PojoMain.class);
+            Log.i("response", response);
             if (pojoMain == null) {
               mainActivityGetCallBack.onError("Error");
             } else {
